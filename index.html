@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonala Sai Varun Gupta | Portfolio</title>
+    <!-- Favicon containing initials BSVG -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23141417'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='26' fill='%23D4AF37'%3EBSVG%3C/text%3E%3C/svg%3E">
+    
+    <!-- Google Fonts: JetBrains Mono & Work Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        charcoal: {
+                            900: '#0c0c0e',
+                            800: '#131316',
+                            700: '#1b1b21',
+                            600: '#26262e',
+                            500: '#3e3e4a',
+                        },
+                        gold: {
+                            DEFAULT: '#D4AF37',
+                            light: '#F3E5AB',
+                            dark: '#AA7C11',
+                            glow: 'rgba(212, 175, 55, 0.15)'
+                        }
+                    },
+                    fontFamily: {
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                        sans: ['"Work Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0c0c0e;
+            font-family: 'Work Sans', sans-serif;
+        }
+        .font-mono-heading {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0c0c0e;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #26262e;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+        /* Smooth tree branch connection lines styling */
+        .tree-line-active {
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+        /* Collapsible accordion animation heights */
+        .accordion-content {
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease-out;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+        }
+        .accordion-content.expanded {
+            max-height: 2000px; /* high limit to accommodate largest section dynamically */
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="text-zinc-300 antialiased min-h-screen selection:bg-gold selection:text-charcoal-900">
+
+    <!-- Subtle digital dark overlay grid -->
+    <div class="fixed inset-0 pointer-events-none z-0 bg-[radial-gradient(#1c1c24_1px,transparent_1px)] [background-size:24px_24px] opacity-20"></div>
+
+    <!-- Main Container -->
+    <div class="relative z-10 max-w-4xl mx-auto px-6 py-12 md:py-20 flex flex-col min-h-screen">
+        
+        <!-- Top Sticky Compact Header -->
+        <header class="flex justify-between items-center mb-16 pb-4 border-b border-charcoal-700/50">
+            <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-gold animate-ping"></span>
+                <span class="font-mono text-xs uppercase tracking-widest text-gold font-bold">BSVG // Available for Opportunities</span>
+            </div>
+            <div class="flex gap-4 text-xs font-mono">
+                <a href="#contact" class="text-zinc-400 hover:text-gold transition-colors">Contact : +91 8897128063</a>
+                <span class="text-charcoal-500">/</span>
+                <span class="text-zinc-500">ID: 23R11A6208</span>
+            </div>
+        </header>
+
+        <!-- Hero Summary Section (Always Visible) -->
+        <section id="hero" class="mb-16">
+            <h1 class="text-4xl md:text-5xl font-bold text-zinc-100 tracking-tight leading-tight mb-2 font-mono-heading">
+                Bonala Sai Varun Gupta
+            </h1>
+            <p class="text-lg md:text-xl text-gold font-mono tracking-wide mb-6">
+                Software Engineering Student &bull; Full-Stack & Blockchain Developer
+            </p>
+            <div class="max-w-2xl text-zinc-400 space-y-4 text-base leading-relaxed">
+                <p>
+                    Motivated software engineering undergraduate with hands-on experience in full-stack development, blockchain systems, AI/ML, and data-driven application design. Passionate about building scalable, intelligent digital solutions involving database design, decentralized systems, LLM-powered assistants, and automated data pipelines.
+                </p>
+                <p class="text-sm font-mono text-zinc-500 flex items-center gap-2">
+                    <i data-lucide="map-pin" class="w-4 h-4 text-gold"></i> Hyderabad, India &bull; Geethanjali College of Engineering
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="mt-8 flex flex-wrap gap-4 items-center">
+                <a href="mailto:bsaivarungupta786@gmail.com" class="px-4 py-2 rounded bg-gold text-charcoal-900 font-mono text-xs font-bold flex items-center gap-2 hover:bg-gold-light transition duration-200">
+                    <i data-lucide="mail" class="w-4 h-4"></i> bsaivarungupta786@gmail.com
+                </a>
+                <a href="https://linkedin.com/in/bonala-sai-varun-gupta" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded bg-charcoal-800 border border-charcoal-600 hover:border-gold/50 font-mono text-xs text-zinc-300 hover:text-gold flex items-center gap-2 transition duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+  <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.86 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/>
+</svg> LinkedIn
+                </a>
+                <a href="https://github.com/saivarun-07" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded bg-charcoal-800 border border-charcoal-600 hover:border-gold/50 font-mono text-xs text-zinc-300 hover:text-gold flex items-center gap-2 transition duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+  <path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-2.15c-3.2.7-3.87-1.36-3.87-1.36-.53-1.34-1.29-1.7-1.29-1.7-1.06-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.73 1.27 3.4.97.1-.75.4-1.27.73-1.56-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.43-2.69 5.4-5.25 5.69.41.36.78 1.06.78 2.14v3.17c0 .3.2.66.79.55C20.71 21.38 24 17.07 24 12c0-6.27-5.23-11.5-12-11.5z"/>
+</svg></i> GitHub
+                </a>
+            </div>
+        </section>
+
+        <!-- MAIN ACCORDION / TREE SECTION -->
+        <main class="relative pl-6 md:pl-10 border-l-2 border-charcoal-700/60 ml-3 space-y-8">
+            
+            <!-- Global Tree Dynamic Vertical Track -->
+            <div id="tree-indicator" class="absolute left-[-2px] top-0 bottom-0 w-[2px] bg-gold/30 transition-all duration-300 pointer-events-none"></div>
+
+            <!-- SECTION 1: Technical Stack (Initially Expanded) -->
+            <div class="accordion-node relative group">
+                <!-- Anchor Dot -->
+                <div class="absolute -left-[31px] md:-left-[47px] top-4 w-4 h-4 rounded-full border-2 border-gold bg-charcoal-900 flex items-center justify-center transition-all duration-300 group-hover:scale-125 z-20">
+                    <div class="w-1.5 h-1.5 rounded-full bg-gold"></div>
+                </div>
+                
+                <!-- Toggle Header -->
+                <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between text-left focus:outline-none focus:ring-1 focus:ring-gold/30 rounded-lg p-2 -m-2">
+                    <div>
+                        <span class="text-xs font-mono text-gold uppercase tracking-wider block">01 / CAPABILITIES</span>
+                        <h2 class="text-xl font-bold text-zinc-100 font-mono-heading flex items-center gap-2">
+                            Technical Arsenal <i data-lucide="cpu" class="w-5 h-5 text-gold/80"></i>
+                        </h2>
+                    </div>
+                    <div class="p-2 rounded-full bg-charcoal-800 text-zinc-400 group-hover:text-gold transition-colors">
+                        <i data-lucide="chevron-down" class="w-5 h-5 transform transition-transform duration-300 arrow-icon"></i>
+                    </div>
+                </button>
+
+                <!-- Expanded Body Content -->
+                <div class="accordion-content expanded mt-4 pl-2">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+                        <!-- Langs -->
+                        <div class="p-4 bg-charcoal-800/40 rounded-lg border border-charcoal-700/60 hover:border-charcoal-600 transition duration-200">
+                            <span class="text-xs font-mono text-gold">Programming Languages</span>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="px-2 py-1 bg-charcoal-700/60 text-zinc-200 text-xs font-mono rounded">Python</span>
+                                <span class="px-2 py-1 bg-charcoal-700/60 text-zinc-200 text-xs font-mono rounded">Java</span>
+                                <span class="px-2 py-1 bg-charcoal-700/60 text-zinc-200 text-xs font-mono rounded">JavaScript</span>
+                                <span class="px-2 py-1 bg-charcoal-700/60 text-zinc-200 text-xs font-mono rounded">C</span>
+                                <span class="px-2 py-1 bg-charcoal-700/60 text-zinc-200 text-xs font-mono rounded">SQL</span>
+                            </div>
+                        </div>
+                        <!-- AI / ML -->
+                        <div class="p-4 bg-charcoal-800/40 rounded-lg border border-charcoal-700/60 hover:border-charcoal-600 transition duration-200">
+                            <span class="text-xs font-mono text-gold">Artificial Intelligence & ML</span>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="px-2 py-1 bg-charcoal-700/60 text-zinc-200 text-xs font-mono rounded">LangChain</span>
+                                <span class="px-2 py-1 bg-charcoal-700/60 text-zinc-200 text-xs font-mono rounded">RAG Pipelines</span>
+                                <span class="px-2 py-1 bg-charcoal-700/60 text-zinc-200 text-xs font-mono rounded">Vector Embeddings</span>
+                                <span class="px-2 py-1 bg-charcoal-700/60 text-zinc-200 text-xs font-mono rounded">LLM Integration</span>
+                            </div>
+                        </div>
+                        <!-- Databases & Architectures -->
+                        <div class="p-4 bg-charcoal-800/40 rounded-lg border border-charcoal-700/60 hover:border-charcoal-600 transition duration-200">
+                            <span class="text-xs font-mono text-gold">Databases & Architecture</span>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="px-2 py-1 bg-charcoal-700/60 text-zinc-200 text-xs font-mono rounded">MongoDB</span>
+                                <span class="px-2 py-1 bg-charcoal-700/60 text-zinc-200 text-xs font-mono rounded">MySQL</span>
+                                <span class="px-2 py-1 bg-charcoal-700/60 text-zinc-200 text-xs font-mono rounded">Data Modeling</span>
+                                <span class="px-2 py-1 bg-charcoal-700/60 text-zinc-200 text-xs font-mono rounded">Schema Design</span>
+                            </div>
+                        </div>
+                        <!-- Blockchain / Web3 -->
+                        <div class="p-4 bg-charcoal-800/40 rounded-lg border border-charcoal-700/60 hover:border-charcoal-600 transition duration-200">
+                            <span class="text-xs font-mono text-gold">Blockchain & Web3</span>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="px-2 py-1 bg-charcoal-700/60 text-zinc-200 text-xs font-mono rounded">Solidity</span>
+                                <span class="px-2 py-1 bg-charcoal-700/60 text-zinc-200 text-xs font-mono rounded">Ethereum</span>
+                                <span class="px-2 py-1 bg-charcoal-700/60 text-zinc-200 text-xs font-mono rounded">Web3.js</span>
+                                <span class="px-2 py-1 bg-charcoal-700/60 text-zinc-200 text-xs font-mono rounded">Ganache & MetaMask</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 2: Work Experience (Initially Expanded) -->
+            <div class="accordion-node relative group">
+                <!-- Anchor Dot -->
+                <div class="absolute -left-[31px] md:-left-[47px] top-4 w-4 h-4 rounded-full border-2 border-gold bg-charcoal-900 flex items-center justify-center transition-all duration-300 group-hover:scale-125 z-20">
+                    <div class="w-1.5 h-1.5 rounded-full bg-gold"></div>
+                </div>
+
+                <!-- Toggle Header -->
+                <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between text-left focus:outline-none focus:ring-1 focus:ring-gold/30 rounded-lg p-2 -m-2">
+                    <div>
+                        <span class="text-xs font-mono text-gold uppercase tracking-wider block">02 / HISTORY</span>
+                        <h2 class="text-xl font-bold text-zinc-100 font-mono-heading flex items-center gap-2">
+                            Professional Experience <i data-lucide="briefcase" class="w-5 h-5 text-gold/80"></i>
+                        </h2>
+                    </div>
+                    <div class="p-2 rounded-full bg-charcoal-800 text-zinc-400 group-hover:text-gold transition-colors">
+                        <i data-lucide="chevron-down" class="w-5 h-5 transform transition-transform duration-300 arrow-icon"></i>
+                    </div>
+                </button>
+
+                <!-- Expanded Body Content -->
+                <div class="accordion-content expanded mt-4 pl-2 space-y-6">
+                    
+                    <!-- Role 1 -->
+                    <div class="relative pl-4 border-l border-gold/30">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-1 mb-2">
+                            <h3 class="font-bold text-zinc-200 text-base">Software Engineering Intern</h3>
+                            <span class="text-xs font-mono text-gold bg-gold/10 px-2 py-1 rounded">Jan 2026 – Present</span>
+                        </div>
+                        <p class="text-sm font-semibold text-zinc-400 mb-2">India Meteorological Department (IMD) &bull; <span class="italic font-normal">Hyderabad, India</span></p>
+                        <ul class="text-xs text-zinc-400 list-disc list-outside ml-4 space-y-1.5">
+                            <li>Designed and developed an Automated Weather Bulletin Generation System producing region-specific weather reports across daily forecasts, cyclones, floods, heatwaves, and seasonal alerts.</li>
+                            <li>Designed multi-regional language rendering support, making critical weather updates fully accessible in multiple regional Indian languages.</li>
+                            <li>Leveraged Python, MongoDB, and REST APIs for backend processing, dynamic storage schemas, and scalability under real-time meteorological sensor load.</li>
+                            <li>Coordinated with domain scientists to guarantee absolute adherence to global official standards and weather regulatory criteria.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Role 2 -->
+                    <div class="relative pl-4 border-l border-gold/30">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-1 mb-2">
+                            <h3 class="font-bold text-zinc-200 text-base">Software Engineering Intern</h3>
+                            <span class="text-xs font-mono text-zinc-400 bg-charcoal-800 px-2 py-1 rounded">May 2025</span>
+                        </div>
+                        <p class="text-sm font-semibold text-zinc-400 mb-2">Information Data Solutions &bull; <span class="italic font-normal">Vizag, India</span></p>
+                        <ul class="text-xs text-zinc-400 list-disc list-outside ml-4 space-y-1.5">
+                            <li>Supported development of a blockchain-based carbon credit decentralized platform to ensure transaction traceability, integrity, and trustless audits.</li>
+                            <li>Developed and deployed Ethereum smart contracts in Solidity on Ganache to establish tamper-proof records throughout the credit lifecycle.</li>
+                            <li>Integrated Web3.js and MetaMask for client-side wallet interactions and secure on-chain user flows.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 3: Featured Projects (Initially Expanded) -->
+            <div class="accordion-node relative group">
+                <!-- Anchor Dot -->
+                <div class="absolute -left-[31px] md:-left-[47px] top-4 w-4 h-4 rounded-full border-2 border-gold bg-charcoal-900 flex items-center justify-center transition-all duration-300 group-hover:scale-125 z-20">
+                    <div class="w-1.5 h-1.5 rounded-full bg-gold"></div>
+                </div>
+
+                <!-- Toggle Header -->
+                <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between text-left focus:outline-none focus:ring-1 focus:ring-gold/30 rounded-lg p-2 -m-2">
+                    <div>
+                        <span class="text-xs font-mono text-gold uppercase tracking-wider block">03 / CREATIONS</span>
+                        <h2 class="text-xl font-bold text-zinc-100 font-mono-heading flex items-center gap-2">
+                            Engineering Projects <i data-lucide="code" class="w-5 h-5 text-gold/80"></i>
+                        </h2>
+                    </div>
+                    <div class="p-2 rounded-full bg-charcoal-800 text-zinc-400 group-hover:text-gold transition-colors">
+                        <i data-lucide="chevron-down" class="w-5 h-5 transform transition-transform duration-300 arrow-icon"></i>
+                    </div>
+                </button>
+
+                <!-- Expanded Body Content -->
+                <div class="accordion-content expanded mt-4 pl-2 space-y-6">
+                    
+                    <!-- Project 1 -->
+                    <div class="p-5 bg-charcoal-800/30 rounded-lg border border-charcoal-700/65 flex flex-col justify-between hover:border-gold/30 transition duration-300">
+                        <div>
+                            <div class="flex items-start justify-between">
+                                <h3 class="text-lg font-bold text-zinc-100 font-mono-heading">RAG-Based AI Chatbot for E-Commerce</h3>
+                                <span class="text-[10px] font-mono text-gold border border-gold/20 px-2 py-0.5 rounded">2025</span>
+                            </div>
+                            <p class="text-xs text-zinc-400 mt-2 leading-relaxed">
+                                Built an e-commerce semantic assistant grounded in accurate internal products, orders, and logistics manuals. Used LangChain orchestrations coupled with custom semantic lookup vectors to reduce hallucinations and ensure context preservation across dialogues.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <span class="px-2 py-0.5 bg-charcoal-700 text-zinc-300 text-[10px] font-mono rounded">LangChain</span>
+                                <span class="px-2 py-0.5 bg-charcoal-700 text-zinc-300 text-[10px] font-mono rounded">FastAPI</span>
+                                <span class="px-2 py-0.5 bg-charcoal-700 text-zinc-300 text-[10px] font-mono rounded">Sentence Transformers</span>
+                                <span class="px-2 py-0.5 bg-charcoal-700 text-zinc-300 text-[10px] font-mono rounded">VectorDB</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="p-5 bg-charcoal-800/30 rounded-lg border border-charcoal-700/65 flex flex-col justify-between hover:border-gold/30 transition duration-300">
+                        <div>
+                            <div class="flex items-start justify-between">
+                                <h3 class="text-lg font-bold text-zinc-100 font-mono-heading">Full-Stack Food Ordering Web App</h3>
+                                <span class="text-[10px] font-mono text-gold border border-gold/20 px-2 py-0.5 rounded">2024</span>
+                            </div>
+                            <p class="text-xs text-zinc-400 mt-2 leading-relaxed">
+                                Designed a concurrent-ready menu system and checkout processor leveraging high-throughput MongoDB indexes. Integrates lightweight JS triggers and live responsive callbacks for robust handling under simulated order-placement waves.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <span class="px-2 py-0.5 bg-charcoal-700 text-zinc-300 text-[10px] font-mono rounded">Node.js</span>
+                                <span class="px-2 py-0.5 bg-charcoal-700 text-zinc-300 text-[10px] font-mono rounded">Express</span>
+                                <span class="px-2 py-0.5 bg-charcoal-700 text-zinc-300 text-[10px] font-mono rounded">MongoDB</span>
+                                <span class="px-2 py-0.5 bg-charcoal-700 text-zinc-300 text-[10px] font-mono rounded">Data Modeling</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- SECTION 4: Education (Initially Collapsed) -->
+            <div class="accordion-node relative group">
+                <!-- Anchor Dot -->
+                <div class="absolute -left-[31px] md:-left-[47px] top-4 w-4 h-4 rounded-full border-2 border-charcoal-600 bg-charcoal-900 flex items-center justify-center transition-all duration-300 group-hover:scale-125 z-20">
+                    <div class="w-1.5 h-1.5 rounded-full bg-charcoal-600 dot-inner"></div>
+                </div>
+
+                <!-- Toggle Header -->
+                <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between text-left focus:outline-none focus:ring-1 focus:ring-gold/30 rounded-lg p-2 -m-2">
+                    <div>
+                        <span class="text-xs font-mono text-zinc-500 uppercase tracking-wider block">04 / KNOWLEDGE</span>
+                        <h2 class="text-xl font-bold text-zinc-300 group-hover:text-zinc-100 font-mono-heading flex items-center gap-2">
+                            Academic Profile <i data-lucide="graduation-cap" class="w-5 h-5 text-gold/60 group-hover:text-gold"></i>
+                        </h2>
+                    </div>
+                    <div class="p-2 rounded-full bg-charcoal-800 text-zinc-400 group-hover:text-gold transition-colors">
+                        <i data-lucide="chevron-right" class="w-5 h-5 transform transition-transform duration-300 arrow-icon"></i>
+                    </div>
+                </button>
+
+                <!-- Collapsed Body Content -->
+                <div class="accordion-content mt-4 pl-2 space-y-4">
+                    
+                    <div class="p-4 bg-charcoal-800/20 rounded border border-charcoal-700/60 flex justify-between items-center flex-wrap gap-2">
+                        <div>
+                            <span class="text-[10px] font-mono text-gold">2023 - 2027</span>
+                            <h3 class="font-bold text-zinc-200">B.Tech. in Computer Science & Engineering</h3>
+                            <p class="text-xs text-zinc-400">Geethanjali College of Engineering and Technology</p>
+                        </div>
+                        <span class="text-xs font-mono bg-charcoal-700 text-gold px-2.5 py-1 rounded">CGPA: 8.3 / 10.0</span>
+                    </div>
+
+                    <div class="p-4 bg-charcoal-800/20 rounded border border-charcoal-700/60 flex justify-between items-center flex-wrap gap-2">
+                        <div>
+                            <span class="text-[10px] font-mono text-zinc-500">2021 - 2023</span>
+                            <h3 class="font-bold text-zinc-200">Intermediate (MPC)</h3>
+                            <p class="text-xs text-zinc-400">International Junior College</p>
+                        </div>
+                        <span class="text-xs font-mono bg-charcoal-700 text-zinc-300 px-2.5 py-1 rounded">Percentage: 90%</span>
+                    </div>
+
+                    <div class="p-4 bg-charcoal-800/20 rounded border border-charcoal-700/60 flex justify-between items-center flex-wrap gap-2">
+                        <div>
+                            <span class="text-[10px] font-mono text-zinc-500">Graduated April 2021</span>
+                            <h3 class="font-bold text-zinc-200">Secondary School Certificate (SSC)</h3>
+                            <p class="text-xs text-zinc-400">Kendriya Vidyalaya (CBSE)</p>
+                        </div>
+                        <span class="text-xs font-mono bg-charcoal-700 text-zinc-300 px-2.5 py-1 rounded">GPA: 8.3 / 10.0</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- SECTION 5: Achievements & Competitions (Initially Collapsed) -->
+            <div class="accordion-node relative group">
+                <!-- Anchor Dot -->
+                <div class="absolute -left-[31px] md:-left-[47px] top-4 w-4 h-4 rounded-full border-2 border-charcoal-600 bg-charcoal-900 flex items-center justify-center transition-all duration-300 group-hover:scale-125 z-20">
+                    <div class="w-1.5 h-1.5 rounded-full bg-charcoal-600 dot-inner"></div>
+                </div>
+
+                <!-- Toggle Header -->
+                <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between text-left focus:outline-none focus:ring-1 focus:ring-gold/30 rounded-lg p-2 -m-2">
+                    <div>
+                        <span class="text-xs font-mono text-zinc-500 uppercase tracking-wider block">05 / DISTINCTIONS</span>
+                        <h2 class="text-xl font-bold text-zinc-300 group-hover:text-zinc-100 font-mono-heading flex items-center gap-2">
+                            Achievements & Hackathons <i data-lucide="trophy" class="w-5 h-5 text-gold/60 group-hover:text-gold"></i>
+                        </h2>
+                    </div>
+                    <div class="p-2 rounded-full bg-charcoal-800 text-zinc-400 group-hover:text-gold transition-colors">
+                        <i data-lucide="chevron-right" class="w-5 h-5 transform transition-transform duration-300 arrow-icon"></i>
+                    </div>
+                </button>
+
+                <!-- Collapsed Body Content -->
+                <div class="accordion-content mt-4 pl-2 space-y-4">
+                    
+                    <!-- Hackathon item 1 -->
+                    <div class="p-4 bg-charcoal-800/30 rounded-lg border border-charcoal-700/60">
+                        <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
+                            <h4 class="font-bold text-zinc-200">MeghDooth &bull; Smart India Hackathon (SIH) 2025</h4>
+                            <span class="text-[10px] font-mono text-gold bg-gold/10 px-2 py-0.5 rounded">National Level</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">
+                            Developed an automated hyperlocal weather warning generator feeding directly off the official meteorological databases. Streamlines localized warning delivery to emergency responders and civilians based on target pin-codes.
+                        </p>
+                    </div>
+
+                    <!-- Hackathon item 2 -->
+                    <div class="p-4 bg-charcoal-800/30 rounded-lg border border-charcoal-700/60">
+                        <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
+                            <h4 class="font-bold text-zinc-200">Geenovate 2025: Fund Tracker System</h4>
+                            <span class="text-[10px] font-mono text-zinc-400 bg-charcoal-800 px-2 py-0.5 rounded">Regional Level</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">
+                            Designed and deployed real-time data transparency interfaces tracking structural execution pipelines and direct public expenditure distributions.
+                        </p>
+                    </div>
+
+                    <!-- Hackathon item 3 -->
+                    <div class="p-4 bg-charcoal-800/30 rounded-lg border border-charcoal-700/60">
+                        <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
+                            <h4 class="font-bold text-zinc-200">Geenovate 2024: Pesticide Advisory Engine</h4>
+                            <span class="text-[10px] font-mono text-zinc-400 bg-charcoal-800 px-2 py-0.5 rounded">Regional Level</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">
+                            Engineered an automated ML-driven diagnostic recommending cost-effective, environmentally sound crop protection formulas based on parameters including soil pH and native pest distributions.
+                        </p>
+                    </div>
+
+                    <!-- Hackathon item 4 -->
+                    <div class="p-4 bg-charcoal-800/30 rounded-lg border border-charcoal-700/60">
+                        <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
+                            <h4 class="font-bold text-zinc-200">Smart Railway Crack Detection Ideathon</h4>
+                            <span class="text-[10px] font-mono text-zinc-400 bg-charcoal-800 px-2 py-0.5 rounded">Innovation Challenge</span>
+                        </div>
+                        <p class="text-xs text-zinc-400">
+                            Prototyped image segmentation algorithms coupled with acoustic wave tracking designed for early prevention of infrastructure structural failures.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- SECTION 6: Certifications (Initially Collapsed) -->
+            <div class="accordion-node relative group">
+                <!-- Anchor Dot -->
+                <div class="absolute -left-[31px] md:-left-[47px] top-4 w-4 h-4 rounded-full border-2 border-charcoal-600 bg-charcoal-900 flex items-center justify-center transition-all duration-300 group-hover:scale-125 z-20">
+                    <div class="w-1.5 h-1.5 rounded-full bg-charcoal-600 dot-inner"></div>
+                </div>
+
+                <!-- Toggle Header -->
+                <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between text-left focus:outline-none focus:ring-1 focus:ring-gold/30 rounded-lg p-2 -m-2">
+                    <div>
+                        <span class="text-xs font-mono text-zinc-500 uppercase tracking-wider block">06 / VERIFIED</span>
+                        <h2 class="text-xl font-bold text-zinc-300 group-hover:text-zinc-100 font-mono-heading flex items-center gap-2">
+                            Certifications <i data-lucide="award" class="w-5 h-5 text-gold/60 group-hover:text-gold"></i>
+                        </h2>
+                    </div>
+                    <div class="p-2 rounded-full bg-charcoal-800 text-zinc-400 group-hover:text-gold transition-colors">
+                        <i data-lucide="chevron-right" class="w-5 h-5 transform transition-transform duration-300 arrow-icon"></i>
+                    </div>
+                </button>
+
+                <!-- Collapsed Body Content -->
+                <div class="accordion-content mt-4 pl-2 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    
+                    <div class="p-3 bg-charcoal-800/20 border border-charcoal-700/60 rounded flex items-center gap-3">
+                        <div class="p-2 bg-gold/10 rounded text-gold">
+                            <i data-lucide="badge-check" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold text-zinc-200">Java Foundations</h4>
+                            <p class="text-[10px] text-zinc-500">Oracle Certified</p>
+                        </div>
+                    </div>
+
+                    <div class="p-3 bg-charcoal-800/20 border border-charcoal-700/60 rounded flex items-center gap-3">
+                        <div class="p-2 bg-gold/10 rounded text-gold">
+                            <i data-lucide="badge-check" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold text-zinc-200">MySQL Developer</h4>
+                            <p class="text-[10px] text-zinc-500">Oracle Certified</p>
+                        </div>
+                    </div>
+                    <div class="p-3 bg-charcoal-800/20 border border-charcoal-700/60 rounded flex items-center gap-3">
+                        <div class="p-2 bg-gold/10 rounded text-gold">
+                            <i data-lucide="badge-check" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold text-zinc-200">C & Advanced C Standards</h4>
+                            <p class="text-[10px] text-zinc-500">Cisco Credentials</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </main>
+
+        <!-- SECTION 7: Contact Info -->
+        <section id="contact" class="mt-20 border-t border-charcoal-800 pt-12">
+            <span class="text-xs font-mono text-gold uppercase tracking-wider block mb-2">GET IN TOUCH</span>
+            <h2 class="text-3xl font-bold text-zinc-100 font-mono-heading mb-6">Let's Connect</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <p class="text-sm text-zinc-400 leading-relaxed mb-6">
+                        I'm interested in finding opportunities in software development, decentralized architectures, AI integrations, or custom backends. Send over an email or reach out via LinkedIn!
+                    </p>
+                    <div class="flex items-center gap-2 text-xs font-mono text-zinc-500">
+                        <i data-lucide="clock" class="w-4 h-4 text-gold"></i>
+                        <span>Typically replies within 24 hours</span>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <a href="mailto:bsaivarungupta786@gmail.com" class="block p-4 rounded-lg bg-charcoal-800/40 border border-charcoal-700/80 hover:border-gold/50 hover:bg-charcoal-800/60 transition group">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="mail" class="w-5 h-5 text-gold"></i>
+                                <div>
+                                    <span class="text-[10px] font-mono text-zinc-500 block">EMAIL ADDRESS</span>
+                                    <span class="text-sm text-zinc-200 font-semibold group-hover:text-gold transition">bsaivarungupta786@gmail.com</span>
+                                </div>
+                            </div>
+                            <i data-lucide="arrow-up-right" class="w-4 h-4 text-zinc-600 group-hover:text-gold transition"></i>
+                        </div>
+                    </a>
+
+                    <a href="https://linkedin.com/in/bonala-sai-varun-gupta" target="_blank" rel="noopener noreferrer" class="block p-4 rounded-lg bg-charcoal-800/40 border border-charcoal-700/80 hover:border-gold/50 hover:bg-charcoal-800/60 transition group">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+  <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.86 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/>
+</svg>
+                                <div>
+                                    <span class="text-[10px] font-mono text-zinc-500 block">LINKEDIN PROFILE</span>
+                                    <span class="text-sm text-zinc-200 font-semibold group-hover:text-gold transition">linkedin.com/in/bonala-sai-varun-gupta</span>
+                                </div>
+                            </div>
+                            <i data-lucide="arrow-up-right" class="w-4 h-4 text-zinc-600 group-hover:text-gold transition"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="mt-20 pt-8 border-t border-charcoal-850 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-zinc-500 font-mono">
+            <p>&copy; 2026 Bonala Sai Varun Gupta. Built with HTML, Tailwind, and JS.</p>
+            <p>ID // 23R11A6208</p>
+        </footer>
+
+    </div>
+
+    <!-- Scripts for Icon rendering and dynamic Interactive Tree behaviors -->
+    <script>
+        // Render lucide icons
+        lucide.createIcons();
+
+        // Interactive function to toggle and visually expand the accordion node
+        function toggleAccordion(buttonElement) {
+            const node = buttonElement.closest('.accordion-node');
+            const content = node.querySelector('.accordion-content');
+            const arrow = node.querySelector('.arrow-icon');
+            const dot = node.querySelector('.absolute.-left-\\[31px\\], .absolute.-left-\\[47px\\]');
+            const innerDot = dot.querySelector('.w-1\\.5');
+
+            if (content.classList.contains('expanded')) {
+                // Collapse action
+                content.classList.remove('expanded');
+                arrow.classList.remove('rotate-180');
+                if (arrow.getAttribute('data-lucide') === 'chevron-down') {
+                    // Update icon dynamically
+                    arrow.setAttribute('data-lucide', 'chevron-right');
+                    lucide.createIcons();
+                } else {
+                    arrow.style.transform = 'rotate(0deg)';
+                }
+                
+                // Style adjustment for passive dot states
+                dot.classList.remove('border-gold');
+                dot.classList.add('border-charcoal-600');
+                if (innerDot) {
+                    innerDot.classList.remove('bg-gold');
+                    innerDot.classList.add('bg-charcoal-600');
+                }
+            } else {
+                // Expand action
+                content.classList.add('expanded');
+                arrow.style.transform = 'rotate(180deg)';
+                
+                // Style adjustment for active dot state
+                dot.classList.add('border-gold');
+                dot.classList.remove('border-charcoal-600');
+                if (innerDot) {
+                    innerDot.classList.add('bg-gold');
+                    innerDot.classList.remove('bg-charcoal-600');
+                }
+            }
+            updateActiveTrack();
+        }
+
+        // Adjust tracking line glow based on active (expanded) nodes
+        function updateActiveTrack() {
+            const track = document.getElementById('tree-indicator');
+            const expandedNodes = document.querySelectorAll('.accordion-content.expanded');
+            if (expandedNodes.length > 0) {
+                track.classList.add('tree-line-active');
+                track.style.backgroundColor = '#D4AF37';
+            } else {
+                track.classList.remove('tree-line-active');
+                track.style.backgroundColor = 'rgba(212, 175, 55, 0.3)';
+            }
+        }
+
+        // Run initially to ensure line colors match starting configurations
+        updateActiveTrack();
+    </script>
+</body>
+</html>
